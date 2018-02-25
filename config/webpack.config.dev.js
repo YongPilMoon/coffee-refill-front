@@ -196,6 +196,8 @@ module.exports = {
                         loader: require.resolve('css-loader'),
                         options: {
                             importLoaders: 1,
+                            localIdentName: '[name]__[local]___[hash:base64:5]',
+                            modules: 1,
                         },
                     },
                     {
@@ -220,6 +222,9 @@ module.exports = {
                     },
                   {
                       loader: require.resolve('sass-loader'),
+                      options: {
+                        includePaths: [paths.globalStyles]
+                      }
                   }
               ],
           },
