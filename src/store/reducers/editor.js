@@ -19,7 +19,7 @@ export default handleActions({
     return state.set(name, value);
   },
   [types.EDITOR_WRITE_POST]: (state, action) => {
-    const {_id } = action.payload.data;
+    const {_id } = action.payload;
     return state.set('postId', _id);
   }
 }, initialState)
