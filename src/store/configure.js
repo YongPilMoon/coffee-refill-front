@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose, combineReducers} from 'redux';
-import * as modules from './modules';
+import * as modules from './reducers';
 import ReduxThunk from 'redux-thunk';
 
 const reducers = combineReducers(modules);
