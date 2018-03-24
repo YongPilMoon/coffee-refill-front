@@ -44,7 +44,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getPostList: () => dispatch(getPostList())
+  getPostList: (payload) => dispatch(getPostList(payload))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListContainer)

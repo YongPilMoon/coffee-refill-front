@@ -10,9 +10,8 @@ const initialState = Map({
 // reducer
 export default handleActions({
   [types.GET_POST_LIST]: (state, action) => {
-    const posts = action.payload;
-    // const lastPage = action.payload.headers['last-page'];
-    return state.set('posts', fromJS(posts))
-    // .set('lastPage', lastPage)
+    const posts = action.payload.data;
+    const lastPage = parseInt(action.payload.headers['last-page'], 10);
+    return state.set('posts', fromJS(posts)).set('lastPage', lastPage)
   }
 }, initialState)
