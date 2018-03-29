@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import EditorHeader from '../../components/editor/EditorHeader';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { initialize, writePost } from "../../store/actions/editor";
+import { initialize, writePost, editPost } from "../../store/actions/editor";
+import { queryParser } from "../../helper";
+import { getPost } from "../../store/actions/editor";
 
 class EditorHeaderContainer extends Component {
   componentDidMount() {
-    const { initialize } = this.props;
+    const { initialize, location } = this.props;
     initialize(); // 에디터를 초기화 합니다.
+
+    const { id } = queryParser(location.search);
+    if(id) {
+      this.props.getPost(id);
+    }
+
   }
 
   handleGoBack = () => {
@@ -16,7 +24,7 @@ class EditorHeaderContainer extends Component {
   };
 
   handleSubmit = async () => {
-    const { title, markdown, tags, writePost, history } = this.props;
+    const { title, markdown, tags, writePost, editPost, history, location } = this.props;
     const post = {
       title,
       body: markdown,
@@ -24,6 +32,13 @@ class EditorHeaderContainer extends Component {
       tags: tags === "" ? [] : [...new Set(tags.split(',').map(tag => tag.trim()))]
     };
     try {
+      const { id } = queryParser(location.search);
+
+      if(id) {
+        await editPost({ id, ...post});
+        history.push(`/post/${id}`);
+        return;
+      }
       await writePost(post);
       // 페이지를 이동시킵니다. 주의: postId 를 상단에서 레퍼런스를 만들지 않고
       // 이 자리에서 this.props.postId 를 조회해주어야합니다. (현재의 값을 불러오기 위함)
@@ -36,11 +51,12 @@ class EditorHeaderContainer extends Component {
 
   render() {
     const { handleGoBack, handleSubmit } = this;
-
+    const { id }= queryParser(this.props.location.search);
     return (
       <EditorHeader
         onGoBack={handleGoBack}
         onSubmit={handleSubmit}
+        isEdit={id ? true : !!id}
       />
     );
   }
@@ -48,7 +64,9 @@ class EditorHeaderContainer extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   initialize: () => dispatch(initialize()),
-  writePost: (post) => dispatch(writePost(post))
+  writePost: (post) => dispatch(writePost(post)),
+  getPost: (id) => dispatch(getPost(id)),
+  editPost: (post) => dispatch(editPost(post))
 });
 
 export default connect(
