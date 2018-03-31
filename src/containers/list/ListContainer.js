@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PostList from '../../components/list/PostList';
 import Pagination from '../../components/list/Pagination';
 import {connect} from 'react-redux';
-import { getPostList } from "../../store/actions/list";
+import { getPostList } from "../../store/actionCreators/list";
 
 
 class ListContainer extends Component {

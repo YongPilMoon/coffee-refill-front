@@ -1,6 +1,5 @@
 import * as api from '../../lib/api';
 
-/* Editor */
 export const EDITOR_INITIALIZE = 'EDITOR_INITIALIZE';
 export const EDITOR_CHANGE_INPUT = 'EDITOR_CHANGE_INPUT';
 export const EDITOR_WRITE_POST = 'EDITOR_WRITE_POST';

@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 import { Map, List, fromJS } from 'immutable';
-import * as types from "../actions/ActionTypes";
+import * as types from "../actionCreators/ActionTypes";
 // initial state
 const initialState = Map({
   posts: List(),

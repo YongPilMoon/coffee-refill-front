@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PostInfo from 'components/post/PostInfo';
 import PostBody from 'components/post/PostBody';
 import {connect} from 'react-redux';
-import {getPost} from "../../store/actions/post";
+import {getPost} from "../../store/actionCreators/post";
 
 class Post extends Component {
   initialize = () => {

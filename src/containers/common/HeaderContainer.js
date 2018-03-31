@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
-import Header from '../../components/common/Header';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import * as baseActions from '../../store/actionCreators/base';
+import Header from '../../components/common/Header';
+
 import PropTypes from 'prop-types';
 
 class HeaderContainer extends Component {
   handleRemove = () => {
-
+    const { BaseActions } = this.props;
+    BaseActions.showModal('remove');
   };
 
   render() {
@@ -17,7 +22,7 @@ class HeaderContainer extends Component {
     return (
       <Header
         postId={id}
-        onRemove={handleRemove}
+        onRemove={() => handleRemove('remove')}
       />
     );
   }
@@ -25,4 +30,9 @@ class HeaderContainer extends Component {
 
 HeaderContainer.propTypes = {};
 
-export default withRouter(HeaderContainer);
+export default connect(
+  (state) => ({}),
+  (dispatch) => ({
+    BaseActions: bindActionCreators(baseActions, dispatch)
+  })
+)(withRouter(HeaderContainer));

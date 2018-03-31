@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import EditorPane from '../../components/editor/EditorPane';
 import { connect } from 'react-redux';
-import { changeInput } from "../../store/actions/editor";
+import { changeInput } from "../../store/actionCreators/editor";
 
 class EditorPaneContainer extends Component {
   handleChangeInput = ({name, value}) => {

@@ -1,6 +1,8 @@
 import {handleActions} from 'redux-actions';
 import {fromJS, Map} from 'immutable';
-import * as types from '../actions/ActionTypes';
+
+export const GET_POST = 'GET_POST';
+export const REMOVE_POST = 'REMOVE_POST';
 
 // initial state
 const initialState = Map({
@@ -9,7 +11,7 @@ const initialState = Map({
 
 // reducer
 export default handleActions({
-  [types.GET_POST]: (state, action) => {
+  [GET_POST]: (state, action) => {
     const post = action.payload;
     return state.set('post', fromJS(post))
   }

@@ -1,12 +1,11 @@
-import {handleActions} from 'redux-actions';
+ import {handleActions} from 'redux-actions';
 import {Map} from 'immutable';
 import { EDITOR_INITIALIZE,
   EDITOR_CHANGE_INPUT,
   EDITOR_WRITE_POST,
-  EDITOR_GET_POST } from "../actions/editor";
+  EDITOR_GET_POST } from "../actionCreators/editor";
 
 // initial state
-
 const initialState = Map({
   title : '',
   markdown : '',

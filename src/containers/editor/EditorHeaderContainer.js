@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import EditorHeader from '../../components/editor/EditorHeader';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { initialize, writePost, editPost } from "../../store/actions/editor";
+import { initialize, writePost, editPost } from "../../store/actionCreators/editor";
 import { queryParser } from "../../helper";
-import { getPost } from "../../store/actions/editor";
+import { getPost } from "../../store/actionCreators/editor";
 
 class EditorHeaderContainer extends Component {
   componentDidMount() {
