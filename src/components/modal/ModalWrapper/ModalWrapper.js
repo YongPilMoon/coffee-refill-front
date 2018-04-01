@@ -36,7 +36,6 @@ class ModalWrapper extends Component {
     if(!visible && !animate) return null;
 
     const animation = animate && (visible ? 'enter' : 'leave');
-    console.log(animation);
     return (
       <div>
         <div className={cx('gray-background', animation)}/>
