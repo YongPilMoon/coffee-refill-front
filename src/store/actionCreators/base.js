@@ -2,11 +2,12 @@ import * as api from '../../lib/api';
 import { createAction } from 'redux-actions';
 import {
   SHOW_MODAL, HIDE_MODAL, LOGIN, LOGIN_FAIL, CHECK_LOGIN, CHANGE_PASSWORD_INPUT,
-  INITIALIZE_LOGIN_MODAL, LOGOUT
+  INITIALIZE_LOGIN_MODAL, LOGOUT, TEMP_LOGIN
 } from "../reducers/base";
 
 export const showModal = createAction(SHOW_MODAL);
 export const hideModal = createAction(HIDE_MODAL);
+export const tempLogin = createAction(TEMP_LOGIN);
 export const login = (password) => async (dispatch) => {
   try{
     const result = await api.login(password);

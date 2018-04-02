@@ -8,6 +8,9 @@ import PropTypes from 'prop-types';
 class Base extends Component {
   initialize = async () => {
     const { BaseActions } = this.props;
+    if(localStorage.logged === "true") {
+      BaseActions.tempLogin();
+    }
     BaseActions.checkLogin();
   };
 

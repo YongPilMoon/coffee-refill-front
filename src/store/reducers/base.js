@@ -9,6 +9,7 @@ export const LOGOUT = 'base/LOGOUT';
 export const CHECK_LOGIN = 'base/CHECK_LOGIN';
 export const CHANGE_PASSWORD_INPUT = 'base/CHANGE_PASSWORD_INPUT';
 export const INITIALIZE_LOGIN_MODAL = 'base/INITIALIZE_LOGIN_MODAL';
+export const TEMP_LOGIN = 'base/TEMP_LOGIN';
 
 const initialState = Map({
   modal: Map({
@@ -49,4 +50,7 @@ export default handleActions({
   [INITIALIZE_LOGIN_MODAL]: (state, action) => {
     return state.set('loginModal', initialState.get('loginModal'));
   },
+  [TEMP_LOGIN]: (state, action) => {
+    return state.set('logged', true);
+  }
 }, initialState)
