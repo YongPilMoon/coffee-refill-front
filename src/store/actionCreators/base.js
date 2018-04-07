@@ -1,4 +1,5 @@
 import * as api from '../../lib/api';
+import axios from 'axios';
 import { createAction } from 'redux-actions';
 import {
   SHOW_MODAL, HIDE_MODAL, LOGIN, LOGIN_FAIL, CHECK_LOGIN, CHANGE_PASSWORD_INPUT,
@@ -13,6 +14,7 @@ export const login = (password) => async (dispatch) => {
     const result = await api.login(password);
     const { token } = result.headers;
     localStorage.setItem("token", token);
+    axios.defaults.headers.common['token'] = token;
     dispatch({
       type: LOGIN,
     })
