@@ -10,11 +10,8 @@
   justify-content: center;
   flex-direction: column;
 
-  .brand {
-    // 로고
-    color: white;
-    font-size: 2rem;
-    font-weight: 600;
+  .footer-logo {
+    width: 90px;
   }
 
   .admin-login {
