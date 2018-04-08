@@ -2,13 +2,11 @@
 
 
 .header {
-  background: $oc-blue-6;
   .header-content {
-    height: 5rem;
-    width: 1400px;
+    height: 6.5rem;
+    width: 1040px;
     margin: 0 auto; // 중앙 정렬
-    padding-left: 3rem;
-    padding-right: 3rem;
+
 
     // 내부 아이템 세로 중앙 정렬
     display: flex;
@@ -25,6 +23,7 @@
   }
   .header-logo {
     width: 80px;
+    fill: black;
   }
   .right {
     margin-left: auto;

@@ -1,7 +1,6 @@
 @import '../../../styles/utils';
 
 .post-info {
-  background: $oc-blue-6;
   height: 24rem;
   display: flex;
   align-items: center;
@@ -10,23 +9,23 @@
     margin-top: -5rem; // 헤더 크기 만큼 위로
     width: 1024px;
     padding: 1rem;
-    color: white;
+    color: $color-block-2;
     h1 {
-      font-weight: 300;
+      font-weight: 600;
       font-size: 3rem;
       margin: 0;
       word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
     }
     .tags {
       margin-top: 1rem;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       font-weight: 500;
       a {
         &:hover {
           text-decoration: underline;
         }
       }
-      a +a {
+      a + a {
         margin-left: 0.25rem;
       }
     }

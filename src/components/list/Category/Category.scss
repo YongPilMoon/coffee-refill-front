@@ -1,11 +1,9 @@
 @import '../../../styles/utils';
 
-.list-wrapper {
+.category-wrapper {
   width: 1040px;
-  margin: 0 auto;
+  margin: 4rem auto 0 auto;
 
-  padding-top: 2rem;
-  padding-bottom: 5rem;
   padding-left: 1rem;
   padding-right: 1rem;
 
@@ -17,5 +15,16 @@
   }
   @include media("<medium") {
     width: 100%;
+  }
+  .category-item {
+    font-size: 15px;
+    color: $color-gray;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    &:hover {
+      color: $color-black-1;
+      cursor: pointer;
+    }
   }
 }

@@ -15,8 +15,10 @@ const PostItem = ({ title, body, publishedDate, tags, id }) => {
 
   return (
     <div className={cx('post-item')}>
-      <h2><Link to={`/post/${id}`}>{title}</Link></h2>
-      <div className={cx('date')}>{moment(publishedDate).format('ll')}</div>
+      <div className={cx('post-header')}>
+        <h2><Link to={`/post/${id}`}>{title}</Link></h2>
+        <div className={cx('date')}>{moment(publishedDate).format('ll')}</div>
+      </div>
       <p>{removeMd(body)}</p>
       <div className={cx('tags')}>
         {tagList}
