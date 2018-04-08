@@ -3,24 +3,35 @@ import LoginModal from 'components/modal/LoginModal';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as baseActions from 'store/actionCreators/base';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class LoginModalContainer extends Component {
 
   handleLogin = async () => {
-    const { BaseActions, password } = this.props;
+    const { BaseActions, password, history } = this.props;
     try {
       await BaseActions.login(password);
       BaseActions.hideModal('login');
-      localStorage.logged = "true"
+      localStorage.logged = "true";
+      history.push("/");
     } catch (e) {
       console.log(e);
     }
   };
 
   handleCancel = () => {
-    const { BaseActions } = this.props;
+    const { BaseActions, history, logged } = this.props;
+    if(logged) {
+      try {
+        BaseActions.logout();
+      } catch (e) {
+        console.log(e);
+      }
+    }
     BaseActions.hideModal('login');
+    history.push("/");
+    window.location.reload();
   };
 
   handleChange = (e) => {
@@ -55,8 +66,9 @@ export default connect(
     visible: state.base.getIn(['modal', 'login']),
     password: state.base.getIn(['loginModal', 'password']),
     error: state.base.getIn(['loginModal', 'error']),
+    logged: state.base.get('logged')
   }),
   (dispatch) => ({
     BaseActions: bindActionCreators(baseActions, dispatch)
   })
-)(LoginModalContainer);
+)(withRouter(LoginModalContainer));

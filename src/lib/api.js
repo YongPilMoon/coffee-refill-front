@@ -1,5 +1,14 @@
 import axios from 'axios';
+
 export const apiUri = process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'http://52.78.38.76:4000';
+export const setAuthToken = (token) => {
+  axios.defaults.headers.common['token'] = '';
+  delete axios.defaults.headers.common['token'];
+
+  if (token) {
+    axios.defaults.headers.common['token'] = `${token}`;
+  }
+};
 
 export const writePost = ({title, body, tags}) => axios.post(`${apiUri}/api/posts`, { title, body, tags });
 export const getPost = (id) => axios.get(`${apiUri}/api/posts/${id}`);
@@ -13,5 +22,7 @@ export const removePost = (id) => axios.delete(`${apiUri}/api/posts/${id}`);
 export const login = (password) => {
   return axios.post(`${apiUri}/api/auth/login`, {password});
 };
-export const checkLogin = (token) => axios.get(`${apiUri}/api/auth/check`);
+export const checkLogin = () => {
+  return axios.get(`${apiUri}/api/auth/check`)
+};
 export const logout = () => axios.post(`${apiUri}/api/auth/logout`);
