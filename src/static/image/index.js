@@ -1,3 +1,3 @@
 import jurtleLogo from './jurtle-logo.svg';
-
-export { jurtleLogo }
+import nick from './nick.png';
+export { jurtleLogo, nick }

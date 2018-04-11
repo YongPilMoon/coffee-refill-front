@@ -3,6 +3,8 @@
 
 .header {
   .header-content {
+    padding-left: 1px;
+    padding-right: 1px;
     height: 6.5rem;
     width: 1040px;
     margin: 0 auto; // 중앙 정렬
@@ -10,6 +12,7 @@
 
     // 내부 아이템 세로 중앙 정렬
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
     // 반응형 레이아웃
@@ -24,6 +27,9 @@
   .header-logo {
     width: 80px;
     fill: black;
+  }
+  .nick-picture {
+    width: 42px;
   }
   .right {
     margin-left: auto;

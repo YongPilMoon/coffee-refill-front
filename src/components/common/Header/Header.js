@@ -3,7 +3,8 @@ import styles from './Header.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import Button from 'components/common/Button';
-import { jurtleLogo } from 'static/image';
+import { jurtleLogo, nick } from 'static/image';
+
 const cx = classNames.bind(styles);
 
 const Header = ({postId, logged, onRemove}) => (
@@ -23,6 +24,7 @@ const Header = ({postId, logged, onRemove}) => (
         <Button theme="outline" to="/editor">새 포스트</Button>
       </div>
       }
+      <img className={cx('nick-picture')} src={nick} alt="nick picture"/>
     </div>
   </header>
 );
