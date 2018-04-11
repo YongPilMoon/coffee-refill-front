@@ -14,7 +14,7 @@ const PostItem = ({ title, body, publishedDate, tags, id }) => {
   );
 
   return (
-    <div className={cx('post-item')}>
+    <div key={id} className={cx('post-item')}>
       <div className={cx('post-header')}>
         <h2><Link to={`/post/${id}`}>{title}</Link></h2>
         <div className={cx('date')}>{moment(publishedDate).format('ll')}</div>

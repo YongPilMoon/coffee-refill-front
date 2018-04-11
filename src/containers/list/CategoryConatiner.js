@@ -4,7 +4,7 @@ import Category from 'components/list/Category';
 class CategoryConatiner extends Component {
   constructor() {
     super();
-    this.categories = ['All', 'Javascript', 'React', 'Nodejs', 'Css', 'Others']
+    this.categories = ['Javascript', 'React', 'Nodejs', 'Css', 'Etc']
   }
 
   render() {

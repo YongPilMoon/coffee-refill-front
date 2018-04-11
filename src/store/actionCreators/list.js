@@ -1,4 +1,4 @@
-import { GET_POST_LIST } from "./ActionTypes";
+import { GET_POST_LIST } from "../reducers/list";
 import * as api from '../../lib/api';
 
 export const getPostList = ({page, tag}) => async dispatch => {
