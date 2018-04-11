@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Category.scss';
 
 const cx = classNames.bind(styles);
@@ -9,15 +9,16 @@ const cx = classNames.bind(styles);
 const Category = ({categories}) => {
   return (
     <div className={cx('category-wrapper')}>
-      <Link to={"/"} className={cx('category-item')}>
+      <NavLink to={"/"} activeClassName={cx('active')} exact className={cx('category-item')}>
         All
-      </Link>
+      </NavLink>
       {_.map(categories, category =>
-        <Link to={`/tag/${category.toLowerCase()}`}
+        <NavLink to={`/tag/${category.toLowerCase()}`}
         key={category}
+        activeClassName={cx('active')}
         className={cx('category-item')}>
         {category}
-        </Link>)}
+        </NavLink>)}
     </div>
   );
 };
