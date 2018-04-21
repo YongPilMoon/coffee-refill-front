@@ -1,4 +1,4 @@
- import {handleActions} from 'redux-actions';
+import {handleActions} from 'redux-actions';
 import {Map} from 'immutable';
 import { EDITOR_INITIALIZE,
   EDITOR_CHANGE_INPUT,

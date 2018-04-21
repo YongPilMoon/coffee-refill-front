@@ -9,9 +9,7 @@ const cx  = classNames.bind(styles);
 // JSX 에서 ... 을 사용하면 내부에 있는 값들을 props 로 넣어줍니다.
 
 const Div = ({children, ...rest}) => <div {...rest}>{children}</div>
-const Button = ({
-  children, to, onClick, disabled, theme = 'default',
-                }) => {
+const Button = ({ children, to, onClick, disabled, theme = 'default', }) => {
     // to 값이 존재하면 Link 를 사용하고, 그렇지 않으면 div 를 사용합니다.
     // 비활성화 되어있는 버튼인 경우에도 div가 사용됩니다.
     const Element = (to && !disabled) ? Link : Div;
