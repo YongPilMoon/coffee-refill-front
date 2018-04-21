@@ -16,7 +16,6 @@ class HeaderContainer extends Component {
   render() {
     const { handleRemove } = this;
     const { match, logged } = this.props;
-
     const { id } = match.params;
 
     return (
