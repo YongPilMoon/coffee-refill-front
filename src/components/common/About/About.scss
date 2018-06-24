@@ -27,7 +27,7 @@
   }
   &__checkbox:checked ~ &__background {
     opacity: 1;
-    transform: scale(130);
+    transform: scale(80);
   }
   &__checkbox:checked ~ &__close-btn {
     display: block;

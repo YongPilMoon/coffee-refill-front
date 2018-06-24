@@ -35,7 +35,7 @@ const PostList = ({posts}) => (
           <PostItem
             title={title}
             body={body}
-            publisedDate={publishedDate}
+            publishedDate={publishedDate}
             tags={tags}
             key={_id}
             id={_id}

@@ -21,7 +21,7 @@
     }
   }
   .nick-picture { width: 42px; }
-  .nick-text { transition: transform .5s; position: absolute; font-weight: bold; opacity: 0; font-size: 12px; bottom:0;
+  .nick-text { transition: all .5s; position: absolute; font-weight: bold; opacity: 0; font-size: 12px; bottom:0;
   color: white;}
   .header-right-side { margin-left: auto; }
 }
