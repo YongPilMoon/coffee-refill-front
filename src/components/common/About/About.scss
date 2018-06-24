@@ -27,7 +27,11 @@
   }
   &__checkbox:checked ~ &__background {
     opacity: 1;
+<<<<<<< HEAD
     transform: scale(130);
+=======
+    transform: scale(80);
+>>>>>>> a06b8862b4fb5d86ca79136e18b1ec5e916c886a
   }
   &__checkbox:checked ~ &__close-btn {
     display: block;
