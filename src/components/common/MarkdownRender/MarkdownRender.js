@@ -33,6 +33,7 @@ class MarkdownRender extends Component {
         this.setState({
             html : marked(markdown, {
                 breaks : true, //일반 엔터로 새 줄 입력
+                gfm: true,
                 sanitize: true // 마크다운 내부 html 무시
             })
         });

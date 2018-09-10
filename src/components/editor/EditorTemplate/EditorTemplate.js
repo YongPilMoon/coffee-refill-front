@@ -51,7 +51,7 @@ class EditorTemplate extends Component {
     return (
       <div className={cx('editor-template')}>
         { header }
-        <div className={cx('panes')}>
+         <div className={cx('panes')}>
           <div className={cx('pane', 'editor')} style={leftStyle}>
             {editor}
           </div>
