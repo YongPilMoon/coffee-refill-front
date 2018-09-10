@@ -1,2 +1,3 @@
 import jurtleLogo from './jurtle-logo.svg';
-export { jurtleLogo }
+import github from './github.png';
+export { jurtleLogo, github }

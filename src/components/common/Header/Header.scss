@@ -3,7 +3,7 @@
 
 .header {
   .header-content {
-    padding-left: 1px; padding-right: 1px; height: 6.5rem; width: 1040px; margin: 0 auto; // 중앙 정렬
+    padding-left: 1px; padding-right: 1px; height: 8rem; width: 1040px; margin: 0 auto; // 중앙 정렬
     display: flex; justify-content: space-between; align-items: center;
     @include media("<wide") {
       width: 100%;
@@ -24,4 +24,12 @@
   .nick-text { transition: all .5s; position: absolute; font-weight: bold; opacity: 0; font-size: 12px; bottom:0;
   color: white;}
   .header-right-side { margin-left: auto; }
+
+  .github {
+    width: 45px;
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+  }
 }

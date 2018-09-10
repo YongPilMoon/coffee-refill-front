@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import Button from 'components/common/Button';
 import About from 'components/common/About';
-import { jurtleLogo } from 'static/image';
+import { jurtleLogo, github } from 'static/image';
 
 const cx = classNames.bind(styles);
 
@@ -25,6 +25,9 @@ const Header = ({postId, logged, onRemove}) => (
         <Button theme="outline" to="/editor">새 포스트</Button>
       </div>
       }
+      <a href="https://github.com/YongPilMoon" target="_blank">
+        <img className={cx('github')} src={github} alt="github"/>
+      </a>
       {/*<label className={cx('nick')} For="about-toggle">*/}
         {/*<img className={cx('nick-picture')} src={nick} alt="nick picture"/>*/}
         {/*<figcaption className={cx('nick-text')}>NICK</figcaption>*/}
